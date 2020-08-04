@@ -1,16 +1,12 @@
-# squirtle
+# SQUIRTLE
 
-A new Flutter project.
+Squirtle es una app que muestra de una forma mas amigable e intuitiva la plataforma de Moodle.
 
-## Getting Started
+## Uso de la API
 
-This project is a starting point for a Flutter application.
+Se esta haciendo uso de la API de Moodle, especificamente DUTIC, esta app fue hecha solo con fines academicos.
 
-A few resources to get you started if this is your first Flutter project:
+## Construccion
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Se hizo uso del framework [Flutter](https://flutter.dev/).
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
