@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:squirtle/interface/course/courseScreen.dart';
 import 'package:squirtle/models/courseModel.dart';
 
 class CourseCard extends StatelessWidget {
-  const CourseCard({
-    Key key,
-    @required this.currentCourse
-  }) : super(key: key);
+  const CourseCard({Key key, @required this.currentCourse}) : super(key: key);
 
   final Course currentCourse;
-  final String coursePhotoDefault = 'https://www.queestudiar.org/wp-content/uploads/2017/10/software-750x350.jpg';
+  final String coursePhotoDefault =
+      'https://www.queestudiar.org/wp-content/uploads/2017/10/software-750x350.jpg';
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +24,14 @@ class CourseCard extends StatelessWidget {
         child: InkWell(
           onTap: () {
             print("Tap on Card");
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CourseScreen(
+                  currentCourse: currentCourse,
+                ),
+              ),
+            );
           },
           child: Row(
             children: [
@@ -32,7 +39,7 @@ class CourseCard extends StatelessWidget {
                 height: size.width * 0.25,
                 width: size.width * 0.2,
                 child: Image.network(
-                  currentCourse.photo??coursePhotoDefault,
+                  currentCourse.photo ?? coursePhotoDefault,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -50,7 +57,7 @@ class CourseCard extends StatelessWidget {
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        currentCourse.teacher??'No hay profe',
+                        currentCourse.teacher ?? 'No hay profe',
                         style: TextStyle(fontSize: 13),
                       ),
                       Expanded(
