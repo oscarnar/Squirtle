@@ -8,6 +8,8 @@ class Course {
   int userCount;
   double progress;
 
+  List<Tema> temasList = [];
+
   Course({
     @required this.name,
     @required this.courseID,
@@ -17,11 +19,80 @@ class Course {
     this.progress,
   });
 
-  factory Course.fromJSON(Map<String,dynamic> response){
+  factory Course.fromJSON(Map<String, dynamic> response) {
     return Course(
       name: response['fullname'],
-      courseID: response['userid'].toString(),
-      photo: response['userpictureurl'],
+      courseID: response['id'].toString(),
+    );
+  }
+}
+
+class Tema {
+  String id;
+  String name;
+  List<Module> modules = [];
+
+  Tema({this.id, this.name, this.modules});
+
+  factory Tema.fromJSON(Map<String, dynamic> response) {
+    return Tema(
+      name: response['name'],
+      id: response['id'].toString(),
+      //modules: buildModules(response['modules']),
+    );
+  }
+}
+
+class Module {
+  String idModule;
+  String name;
+  String modname;
+  List<Content> contents = [];
+
+  Module({this.idModule, this.name, this.modname, this.contents});
+
+  factory Module.fromJSON(Map<String, dynamic> response) {
+    return Module(
+      name: response['name'],
+      idModule: response['id'].toString(),
+      modname: response['modname'],
+      contents: response.containsKey('contents')
+          ? buildContents(response['contents'])
+          : [],
+    );
+  }
+}
+
+List<Content> buildContents(dynamic response) {
+  List<Content> listContents = [];
+  for (var x in response) {
+    listContents.add(Content.fromJSON(x));
+  }
+  return listContents;
+}
+
+List<Module> buildModules(dynamic response) {
+  List<Module> listModules = [];
+  for (var x in response) {
+    listModules.add(Module.fromJSON(x));
+  }
+  return listModules;
+}
+
+class Content {
+  String type;
+  String filename;
+  String fileUrl;
+  int filesize;
+
+  Content({this.type, this.fileUrl, this.filename, this.filesize});
+
+  factory Content.fromJSON(Map<String, dynamic> response) {
+    return Content(
+      type: response['type'],
+      fileUrl: response['fileurl'],
+      filename: response['filename'],
+      filesize: response['filesize'],
     );
   }
 }
