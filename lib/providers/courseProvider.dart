@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:squirtle/models/courseModel.dart';
 
 class CourseProvider with ChangeNotifier {
-  List<Course> listCourses = []; /*= [
+  List<Course> listCourses = [];
+  /*= [
     Course(
       courseID: '001',
       name: "Computacion Grafica",
@@ -60,10 +61,35 @@ class CourseProvider with ChangeNotifier {
 
   void coursesFromJSON(dynamic data) {
     List listData = data as List;
-    for(int i=0; i<listData.length; i++){
+    for (int i = 0; i < listData.length; i++) {
       Course courseTemp = Course.fromJSON(listData[i]);
       listCourses.add(courseTemp);
     }
     notifyListeners();
+  }
+
+  void addTemas({dynamic data, String courseid}) {
+    List listData = data as List;
+    int index = getIndex(courseid);
+    if (index == -1) return;
+    for (int i = 0; i < listData.length; i++) {
+      print(listData[i].toString());
+      Tema temaTemp = Tema.fromJSON(listData[i]);
+      print('name tema: ${temaTemp.name}');
+      listCourses[index].temasList.add(temaTemp);
+    }
+
+    //listCourses[index].temasList.add(Tema.fromJSON(data));
+
+    notifyListeners();
+  }
+
+  int getIndex(String idCourse) {
+    for (int x = 0; x < listCourses.length; x++) {
+      if (listCourses[x].courseID == idCourse) {
+        return x;
+      }
+    }
+    return -1;
   }
 }
