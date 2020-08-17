@@ -9,11 +9,26 @@ import 'package:squirtle/services/server.dart';
 class CourseScreen extends StatelessWidget {
   CourseScreen({this.currentCourse});
   final Course currentCourse;
+
   @override
   Widget build(BuildContext context) {
-    return currentCourse.temasList.isEmpty
-        ? ListFutureBuilder(idCourse: currentCourse.courseID)
-        : ListModulesBuilder(temas: currentCourse.temasList);
+    return Column(
+      children: [
+        Text(
+          currentCourse.name,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        Expanded(
+          child: currentCourse.temasList.isEmpty
+              ? ListFutureBuilder(idCourse: currentCourse.courseID)
+              : ListModulesBuilder(temas: currentCourse.temasList),
+        )
+      ],
+    );
   }
 }
 
@@ -66,12 +81,12 @@ class ListModulesBuilder extends StatelessWidget {
       itemBuilder: (context, index) {
         return Padding(
           padding: EdgeInsets.only(
-            top: size.width * 0.04,
+            top: size.width * 0.02,
             left: size.width * 0.04,
             right: size.width * 0.04,
             bottom: (() {
               if (index + 1 == temas.length)
-                return size.width * 0.04;
+                return size.width * 0.02;
               else
                 return 0.0;
             }()),
@@ -85,5 +100,3 @@ class ListModulesBuilder extends StatelessWidget {
     );
   }
 }
-
-
