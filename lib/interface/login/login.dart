@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:squirtle/interface/login/components/formLogin.dart';
 import 'package:squirtle/navigator/route_names.dart';
 
-// final token = 'asdasdfdgsdfgasdaawwddwsasxdsd'; Sharon
+// final token = '2b5468ab7e1354a35858c0d70cb6bae7'; Sharon
 final token = 'fefe622cc3ffe3c11bb63824947d66dc'; //Oscar
 class LoginScreen extends StatelessWidget {
   @override
