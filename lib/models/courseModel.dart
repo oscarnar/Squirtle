@@ -21,12 +21,16 @@ class Course {
 
   factory Course.fromJSON(Map<String, dynamic> response) {
     return Course(
-      name: response['fullname'],
+      name: onlyCourseName(response['fullname']),
       courseID: response['id'].toString(),
     );
   }
 }
 
+String onlyCourseName(String name){
+    int index = name.indexOf('-');
+    return name.substring(index + 1);
+  }
 class Tema {
   String id;
   String name;
@@ -38,7 +42,7 @@ class Tema {
     return Tema(
       name: response['name'],
       id: response['id'].toString(),
-      //modules: buildModules(response['modules']),
+      modules: buildModules(response['modules']),
     );
   }
 }
