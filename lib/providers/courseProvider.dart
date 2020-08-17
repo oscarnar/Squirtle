@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:squirtle/models/courseModel.dart';
+import 'package:squirtle/models/taskModel.dart';
 
 class CourseProvider with ChangeNotifier {
   List<Course> listCourses = [];
@@ -77,8 +78,19 @@ class CourseProvider with ChangeNotifier {
       listCourses[index].temasList.add(temaTemp);
     }
 
-    //listCourses[index].temasList.add(Tema.fromJSON(data));
+    //notifyListeners();
+  }
 
+  void taskFromJSON(dynamic data){
+    List listData = data['courses'] as List;
+    for (int i = 0; i < listData.length; i++) {
+      int index = getIndex(listData[i]['id'].toString());
+      List listTask = listData[i]['assignments'] as List;
+      for (int j = 0; j < listTask.length; j++){
+        Task taskTemp = Task.fromJSON(listTask[j]);
+        listCourses[index].tasksList.add(taskTemp);
+      }
+    }
     //notifyListeners();
   }
 
