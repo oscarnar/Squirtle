@@ -73,15 +73,13 @@ class CourseProvider with ChangeNotifier {
     int index = getIndex(courseid);
     if (index == -1) return;
     for (int i = 0; i < listData.length; i++) {
-      print(listData[i].toString());
       Tema temaTemp = Tema.fromJSON(listData[i]);
-      print('name tema: ${temaTemp.name}');
       listCourses[index].temasList.add(temaTemp);
     }
 
     //listCourses[index].temasList.add(Tema.fromJSON(data));
 
-    notifyListeners();
+    //notifyListeners();
   }
 
   int getIndex(String idCourse) {
