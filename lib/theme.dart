@@ -4,7 +4,7 @@
     brightness: Brightness.light,
     primaryColor: Color( 0xff2d99a7 ),
     primaryColorBrightness: Brightness.dark,
-    primaryColorLight: Color( 0xffd7f1f4 ),
+    primaryColorLight: Color( 0xff1c8896 ),
     primaryColorDark: Color( 0xff206e79 ),
     accentColor: Color( 0xff36b8c9 ),
     accentColorBrightness: Brightness.light,
