@@ -28,7 +28,7 @@ class _FormWidgetState extends State<FormWidget> {
             TextFormField(
               validator: (value) {
                 if (value.isEmpty) {
-                  return "Ingrese un usuario";
+                  return "Enter username";
                 }
               },
               keyboardType: TextInputType.emailAddress,
@@ -44,7 +44,7 @@ class _FormWidgetState extends State<FormWidget> {
             TextFormField(
               validator: (value) {
                 if (value.isEmpty) {
-                  return "Ingrese un password";
+                  return "Enter password";
                 }
               },
               obscureText: true,
@@ -116,7 +116,7 @@ class ButtonLogin extends StatelessWidget {
           User userTemp = Provider.of<UserProvider>(context,listen: false).userLogin;
           Scaffold.of(context).showSnackBar(
             SnackBar(
-              content: Text('Procesando...'),
+              content: Text('Processing ...'),
             ),
           );
           print(userTemp.username);
@@ -126,7 +126,7 @@ class ButtonLogin extends StatelessWidget {
             if (value.containsKey('error')) {
               Scaffold.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('User or Password invalid'),
+                  content: Text('Invalid username or password'),
                 ),
               );
             } else {
@@ -134,7 +134,7 @@ class ButtonLogin extends StatelessWidget {
                 if (response.containsKey('exception') || response == null) {
                   Scaffold.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('Error accediendo a DUTIC'),
+                      content: Text('Error accessing DUTIC'),
                     ),
                   );
                 } else {
