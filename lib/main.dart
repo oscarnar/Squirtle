@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:squirtle/navigator/route_names.dart';
 import 'package:squirtle/navigator/routes.dart';
 import 'package:squirtle/providers/courseProvider.dart';
+import 'package:squirtle/providers/imageProvider.dart';
 import 'package:squirtle/providers/userProvider.dart';
 import 'package:squirtle/theme.dart';
 
@@ -19,9 +20,12 @@ class MyApp extends StatelessWidget {
         Provider<UserProvider>(
           create: (_) => UserProvider(),
         ),
-        ChangeNotifierProvider<CourseProvider>(
+        Provider<CourseProvider>(
           create: (_) => CourseProvider(),
-        )
+        ),
+        Provider<ImagenProvider>(
+          create: (_) => ImagenProvider(),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
