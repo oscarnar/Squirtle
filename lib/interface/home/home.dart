@@ -18,6 +18,14 @@ import 'package:squirtle/services/server.dart';
 // https://aulavirtual.unsa.edu.pe/aulavirtual/webservice/rest/server.php?wsfunction=mod_assign_get_assignments&moodlewsrestformat=json&wstoken=fefe622cc3ffe3c11bb63824947d66dc
 // De ese link sacar la info
 
+// TODO: Descargar pdf
+// https://aulavirtual.unsa.edu.pe/aulavirtual/webservice/pluginfile.php/299032/mod_resource/content/1/6_image_arithmetic.pdf?forcedownload=1&token=fefe622cc3ffe3c11bb63824947d66dc
+// El link que proporciona en la informacion del curso para descargar
+// al final del link del archivo poner &token=fefe622cc3ffe3c11bb63824947d66dc
+
+// TODO: Segmentacion de texto
+// Implemtar la segmentacion de texto con openCV
+
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
