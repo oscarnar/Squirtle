@@ -126,7 +126,7 @@ class ButtonLogin extends StatelessWidget {
             if (value.containsKey('error')) {
               Scaffold.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('Invalid username or password'),
+                  content: Text('User or Password invalid'),
                 ),
               );
             } else {
