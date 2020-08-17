@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:squirtle/models/taskModel.dart';
 
 class Course {
   String name;
@@ -9,6 +10,7 @@ class Course {
   double progress;
 
   List<Tema> temasList = [];
+  List<Task> tasksList = [];
 
   Course({
     @required this.name,
