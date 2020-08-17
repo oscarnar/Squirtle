@@ -53,7 +53,6 @@ class ListFutureBuilder extends StatelessWidget {
           print('error courses info: ${snapshot.data.toString()}');
           return Center(child: Text('Ocurrio un error'));
         } else if (snapshot.hasData) {
-          print('data courses info: ${snapshot.data}');
           Provider.of<CourseProvider>(context, listen: false)
               .addTemas(courseid: idCourse, data: snapshot.data);
           return ListModulesBuilder(
