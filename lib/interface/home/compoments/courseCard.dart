@@ -54,12 +54,15 @@ class CourseCard extends StatelessWidget {
                     children: [
                       Text(
                         currentCourse.name,
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                      Text(
-                        currentCourse.teacher ?? 'No hay profe',
-                        style: TextStyle(fontSize: 13),
-                      ),
+                      //Text(
+                      //  currentCourse.teacher ?? 'No hay profe',
+                      //  style: TextStyle(fontSize: 13),
+                      //),
                       Expanded(
                         child: Center(
                           child: FlatButton(
