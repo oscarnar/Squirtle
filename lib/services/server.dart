@@ -33,6 +33,7 @@ class Server {
   static const String LoginService = 'moodle_mobile_app';
   static const String InfoService = 'core_webservice_get_site_info';
   static const String CoursesFunction = 'core_enrol_get_users_courses';
+  static const String CourseInfoFunction = 'core_course_get_contents';
 }
 
 Future<dynamic> serviceLogin({@required dynamic body}) async {
@@ -63,6 +64,20 @@ Future<dynamic> userCoursesService({@required String token,@required String user
     'moodlewsrestformat': 'json',
     'wstoken': token,
     'userid': userid,
+  };
+  return service(body: body);
+}
+
+Future<dynamic> courseInfoService({@required String token,@required String courseid}) async {
+  //wsfunction=core_course_get_contents&moodlewsrestformat=json&wstoken=fefe622cc3ffe3c11bb63824947d66dc&courseid=10175
+
+  print('coursee ID: $courseid');
+  print(token);
+  var body = {
+    'wsfunction': Server.CourseInfoFunction,
+    'moodlewsrestformat': 'json',
+    'wstoken': token,
+    'courseid': courseid,
   };
   return service(body: body);
 }
