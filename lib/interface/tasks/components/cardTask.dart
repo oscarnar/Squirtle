@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:squirtle/interface/scanner/scanner.dart';
 import 'package:squirtle/models/taskModel.dart';
 
 class CardTask extends StatelessWidget {
@@ -19,6 +20,12 @@ class CardTask extends StatelessWidget {
       child: InkWell(
         onTap: () {
           print("Tap on Card");
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ScannerScreen(),
+              ),
+            );
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
