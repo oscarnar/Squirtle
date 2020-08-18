@@ -28,7 +28,7 @@ class Description extends StatelessWidget {
         ),
         Container(
           child: Text(
-            userTemp.about ?? "Nothing about u :c",
+            userTemp.about ?? "Nada acerca de ti :(",
             style: TextStyle(
               fontStyle: FontStyle.italic,
               color: Colors.black54,
