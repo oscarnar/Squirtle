@@ -1,6 +1,6 @@
 # SQUIRTLE
 
-Squirtle es una app que muestra de una forma mas amigable e intuitiva la plataforma de Moodle (DUTIC), además de contar con funcionalidades extra para la creación tareas.\
+Squirtle es una app que muestra de una forma mas amigable e intuitiva la plataforma de Moodle (DUTIC), además de contar con funcionalidades extra para la creación de tareas.\
 El objetivo de Squirtle es brindar una mejor experiencia a los alumnos de la Universidad Nacional de San Agustin de Arequipa.
 
 ## Uso de la API
@@ -12,8 +12,7 @@ Se esta haciendo uso de la API de Moodle, especificamente DUTIC, esta app fue he
 Para la realizacion del prototipo y modelo de vistas se usó [Figma](https://www.figma.com/), lo cual permitió poder trabar en equipo y en tiempo real para la realización de cada una de las vista.
 Puede visitar la vista del prototipo en el siguiente link [Prototipo Squirtle](https://www.figma.com/proto/uAWgtoCADSGCwFNSTRPyIJ/Squirtle?node-id=6%3A2&viewport=346%2C306%2C0.2773333191871643&scaling=scale-down).
 
-![Image of Login](assets/screenshots/login.png) ![Image of Home](assets/screenshots/home.png)
-![Image of Login](assets/screenshots/profile.png)
+![Image of Login](assets/screenshots/login.png) ![Image of Home](assets/screenshots/home.png) ![Image of Profile](assets/screenshots/profile.png)
 
 ## Construccion
 
