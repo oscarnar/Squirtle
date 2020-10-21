@@ -18,6 +18,70 @@ Puede visitar la vista del prototipo en el siguiente link [Prototipo Squirtle](h
 
 Se hizo uso del framework [Flutter](https://flutter.dev/).
 
+## Construccion automática
+
+Dentro de la carpeta android/app tenemos el archivo build.gradle el cual se usa para la construccion automatica.\
+
+Dentro del archivo buil.gradle podemos incorporar las librerias que necesita la app.
+```java
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+}
+```
+
+Tambien podemos configurar la version del SDK de compilacion
+```java
+android {
+    compileSdkVersion 28
+    ...
+    defaultConfig {html).
+        applicationId "com.example.squirtle"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+    ...
+}
+```
+
+Adicionalmente tenemos el archivo pubspec.yaml, que usa el framework Flutter para el manejo de packetes de la app.
+
+```yaml
+name: squirtle
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get: ^3.4.1
+  provider: ^4.3.1
+  http: ^0.12.2
+  image_picker: ^0.6.6+1
+  scidart: ^0.0.1-dev.6
+  opencv:
+    git:
+      url: https://github.com/oscarnar/flutter_opencv.git
+  path_provider: ^0.5.0+1
+  image: ^2.1.12
+  flutter_image_compress: ^0.7.0
+  firebase_ml_vision: ^0.9.4
+```
+
+Para construir con la configuracion hecha podemos correr el comando, el framework ya incorpora la ejecucion de gradle.
+
+```bash
+flutter build
+```
+
+Para probar debemos instalar el archivo apk que se genera.
+
 ## Funcionalidades
 
 Por el momento se pueden hacer las funciones de:
